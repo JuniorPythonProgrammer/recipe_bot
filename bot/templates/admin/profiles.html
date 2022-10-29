@@ -1,0 +1,32 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block main %}
+<main>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Chat id</th>
+            <th scope="col">User name</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Ім'я</th>
+            <th scope="col">Стать</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for profile in profiles %}
+          <tr>
+            <th>{{ profile.chat_id }}</th>
+            <th>{{ profile.user_name }}</th>
+            <th>{{ profile.first_name }}</th>
+            <th>{{ profile.last_name }}</th>
+            <th>{{ profile.user_status }}</th>
+            <th>{{ profile.name }}</th>
+            <th>{{ profile.gender }}</th>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</main>
+{% endblock %}

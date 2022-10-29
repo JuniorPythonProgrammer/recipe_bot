@@ -1,0 +1,21 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block main %}
+<form action="{% url 'recipe_create_url' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Назва страви</label>
+        {{ form.name_dish }}
+    </div>
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Фото (не обов'язково)</label>
+        {{ form.img }}
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Рецепт</label>
+        {{ form.recipe }}
+    </div>
+    <button type="submit" class="btn btn-dark">Створити</button>
+</form>
+{% endblock %}

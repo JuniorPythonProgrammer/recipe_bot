@@ -1,0 +1,8 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block main %}
+<div class="d-grid gap-2 col-4 mx-auto">
+    <a href="{% url 'profiles_url' %}" class="btn btn-dark" type="button">Користувачі</a>
+    <a href="{% url 'recipes_list_url' %}" class="btn btn-dark" type="button">Рецепти</a>
+</div>
+{% endblock %}

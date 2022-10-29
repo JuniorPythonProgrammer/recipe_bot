@@ -1,0 +1,10 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block main %}
+<div class="d-grid gap-2 col-4 mx-auto">
+    {% for recipe in recipes %}
+    <a href="{% url 'recipe_update_url' id=recipe.id %}" class="btn btn-dark" type="button">{{ recipe.name_dish }}</a>
+    {% endfor %}
+    <a href="{% url 'recipe_create_url' %}" class="btn btn-secondary" type="button">Додати новий рецепт</a>
+</div>
+{% endblock %}

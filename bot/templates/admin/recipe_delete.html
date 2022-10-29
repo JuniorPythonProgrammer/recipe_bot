@@ -1,0 +1,13 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block main %}
+<form action="{% url 'recipe_delete_url' id=recipe.id%}" method="post">
+    {% csrf_token %}
+
+    <h4 class="form-label text-center">Ви впевнені, що хочете видалити страву "{{ recipe.name_dish }}"</h4>
+    <div class="d-grid gap-2 col-2 mx-auto d-md-block">
+        <button class="btn btn-dark" type="submit">Так</button>
+        <a href="{% url 'recipe_update_url' id=recipe.id %}" class="btn btn-dark" type="button">Ні</a>
+    </div>
+</form>
+{% endblock %}

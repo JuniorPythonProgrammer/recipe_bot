@@ -70,7 +70,7 @@ def send_create_profile(message, profile):
         bot.send_message(message.chat.id, 'Виберіть свою стать', reply_markup=gender_btn())
 
 def send_main_menu(message):
-    bot.send_message(message.chat.id, 'Головне меню', reply_markup=main_menu_btn())
+    bot.send_message(message.chat.id, 'Головне меню ', reply_markup=main_menu_btn())
 
 def send_recipes_menu(message):
     bot.send_message(message.chat.id, 'Меню рецептів', reply_markup=recipe_btn())

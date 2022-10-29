@@ -31,12 +31,12 @@ class RecipeCreate(View):
 
 class RecipeUpdate(View):
     def get(self, request, id):
-        recipe = Recipe.objects.get(id__iexact=id)
+        recipe = Recipe.objects.get(id=id)
         bound_form = RecipeForm(instance=recipe)
         return render(request, 'admin/recipe_update.html', context={'form': bound_form,'recipe': recipe})
 
     def post(self, request, id):
-        recipe = Recipe.objects.get(id__iexact=id)
+        recipe = Recipe.objects.get(id=id)
         bound_form = RecipeForm(request.POST, request.FILES ,instance=recipe)
 
         if bound_form.is_valid():
@@ -46,10 +46,10 @@ class RecipeUpdate(View):
 
 class RecipeDelete(View):
     def get(self, request, id):
-        recipe = Recipe.objects.get(id__iexact=id)
+        recipe = Recipe.objects.get(id=id)
         return render(request, 'admin/recipe_delete.html', context={'recipe': recipe})
         
     def post(self, request, id):
-        recipe = Recipe.objects.get(id__iexact=id)
+        recipe = Recipe.objects.get(id=id)
         recipe.delete()
         return redirect(reverse('recipes_list_url'))

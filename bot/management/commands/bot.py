@@ -34,7 +34,7 @@ def gender_btn():
     return btn
 
 def get_profile(message):
-    profile = Profile.objects.get(chat_id__iexact=message.from_user.id)
+    profile = Profile.objects.get(chat_id=message.from_user.id)
     return profile
 
 def update_status_prodile(profile, user_status):

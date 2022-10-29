@@ -1,0 +1,1 @@
+web: gunicorn bot_admin.wsgi --log-file -
